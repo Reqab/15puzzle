@@ -14,6 +14,8 @@
 		7FEDE4861A8BF65F0081269C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FEDE4851A8BF65F0081269C /* Images.xcassets */; };
 		7FEDE4891A8BF65F0081269C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FEDE4871A8BF65F0081269C /* LaunchScreen.xib */; };
 		7FEDE4951A8BF65F0081269C /* _5puzzleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FEDE4941A8BF65F0081269C /* _5puzzleTests.m */; };
+		7FEDE4A31A8BF6FB0081269C /* FifteenBoardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FEDE4A21A8BF6FB0081269C /* FifteenBoardView.m */; };
+		7FEDE4A61A8BF71E0081269C /* FifteenBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FEDE4A51A8BF71E0081269C /* FifteenBoard.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,10 @@
 		7FEDE48E1A8BF65F0081269C /* 15puzzleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = 15puzzleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FEDE4931A8BF65F0081269C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7FEDE4941A8BF65F0081269C /* _5puzzleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _5puzzleTests.m; sourceTree = "<group>"; };
+		7FEDE4A11A8BF6FB0081269C /* FifteenBoardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FifteenBoardView.h; sourceTree = "<group>"; };
+		7FEDE4A21A8BF6FB0081269C /* FifteenBoardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FifteenBoardView.m; sourceTree = "<group>"; };
+		7FEDE4A41A8BF71E0081269C /* FifteenBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FifteenBoard.h; sourceTree = "<group>"; };
+		7FEDE4A51A8BF71E0081269C /* FifteenBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FifteenBoard.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +91,10 @@
 				7FEDE47D1A8BF65F0081269C /* AppDelegate.m */,
 				7FEDE47F1A8BF65F0081269C /* ViewController.h */,
 				7FEDE4801A8BF65F0081269C /* ViewController.m */,
+				7FEDE4A11A8BF6FB0081269C /* FifteenBoardView.h */,
+				7FEDE4A21A8BF6FB0081269C /* FifteenBoardView.m */,
+				7FEDE4A41A8BF71E0081269C /* FifteenBoard.h */,
+				7FEDE4A51A8BF71E0081269C /* FifteenBoard.m */,
 				7FEDE4821A8BF65F0081269C /* Main.storyboard */,
 				7FEDE4851A8BF65F0081269C /* Images.xcassets */,
 				7FEDE4871A8BF65F0081269C /* LaunchScreen.xib */,
@@ -219,7 +229,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FEDE4A61A8BF71E0081269C /* FifteenBoard.m in Sources */,
 				7FEDE4811A8BF65F0081269C /* ViewController.m in Sources */,
+				7FEDE4A31A8BF6FB0081269C /* FifteenBoardView.m in Sources */,
 				7FEDE47E1A8BF65F0081269C /* AppDelegate.m in Sources */,
 				7FEDE47B1A8BF65F0081269C /* main.m in Sources */,
 			);
