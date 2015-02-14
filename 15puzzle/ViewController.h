@@ -10,6 +10,8 @@
 
 @interface ViewController : UIViewController
 
+-(IBAction)tileSelected:(UIButton*)sender;
+-(IBAction)shuffleTiles:(id)sender;
 
 @end
 
