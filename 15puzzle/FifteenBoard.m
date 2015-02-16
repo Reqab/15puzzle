@@ -29,7 +29,32 @@
 }
 
 -(void)scramble:(int)n{
+    int row = 0, col = 0;
+    int choice;
+    for(row = 0; row < 4; row++){
+        for(col = 0; col < 4; col++)
+            if([[self.numbers objectAtIndex:col+4*row] intValue] == 0) break;
+        if([[self.numbers objectAtIndex:col+4*row] intValue] == 0) break;
+    }
     
+    for(int i = 0; i < n; i++){
+        choice = arc4random()%4;
+        if(choice == 0 && [self canSlideTileUpAtRow:row+1 Column:col]){
+            [self slideTileAtRow:row+1 Column:col];
+            row++;
+        }else if(choice == 1 && [self canSlideTileDownAtRow:row-1 Column:col]){
+            [self slideTileAtRow:row-1 Column:col];
+            row--;
+        }else if(choice == 2 && [self canSlideTileLeftAtRow:row Column:col+1]){
+            [self slideTileAtRow:row Column:col+1];
+            col++;
+        }else if(choice == 3 && [self canSlideTileRightAtRow:row Column:col-1]){
+            [self slideTileAtRow:row Column:col-1];
+            col--;
+        }else{
+            i--;
+        }
+    }
 }
 
 -(int)getTileAtRow:(int)row Column:(int)col{
@@ -55,25 +80,25 @@
 }
 
 -(BOOL)canSlideTileUpAtRow:(int)row Column:(int)col{
-    if(row == 0) return false;
+    if(row < 1 || row > 3) return false;
     if([[self.numbers objectAtIndex:col+4*(row-1)] intValue] == 0) return true;
     return false;
 }
 
 -(BOOL)canSlideTileDownAtRow:(int)row Column:(int)col{
-    if(row == 3) return false;
+    if(row < 0 || row > 2) return false;
     if([[self.numbers objectAtIndex:col+4*(row+1)] intValue] == 0) return true;
     return false;
 }
 
 -(BOOL)canSlideTileLeftAtRow:(int)row Column:(int)col{
-    if(col == 0) return false;
+    if(col < 1 || col > 3) return false;
     if([[self.numbers objectAtIndex:(col-1)+4*row] intValue] == 0) return true;
     return false;
 }
 
 -(BOOL)canSlideTileRightAtRow:(int)row Column:(int)col{
-    if(col == 3) return false;
+    if(col < 0 || col > 2) return false;
     if([[self.numbers objectAtIndex:(col+1)+4*row] intValue] == 0) return true;
     return false;
 }
