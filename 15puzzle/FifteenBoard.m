@@ -18,6 +18,30 @@
 }
 */
 
+-(NSString*)sandBoxFileName{
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *docDir = paths[0];
+    NSString *fileName = [docDir stringByAppendingPathComponent:@"gameboard.plist"];
+    return fileName;
+}
+
+#define kNumbers @"numbersKey"
+
+-(void)saveBoard{
+    NSLog(@"saveBoard:");
+    NSString *fileName = [self sandBoxFileName];
+    NSDictionary *dict = @{kNumbers : self.numbers};
+    [dict writeToFile:fileName atomically:YES];
+}
+
+-(void)loadBoard{
+    NSLog(@"loadBoard:");
+    NSString* fileName = [self sandBoxFileName];
+    NSDictionary *dict = [[NSDictionary alloc] initWithContentsOfFile:fileName];
+    NSArray *savedNumbers = [dict objectForKey:kNumbers];
+    self.numbers = [[NSMutableArray alloc] initWithArray:savedNumbers];
+}
+
 -(instancetype)init{
     if(self = [super init]){
         self.numbers = [[NSMutableArray alloc] initWithCapacity:16];

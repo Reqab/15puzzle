@@ -19,21 +19,9 @@
 
 @implementation ViewController
 
--(NSString*)sandBoxFileName{
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *docDir = paths[0];
-    NSString *fileName = [docDir stringByAppendingPathComponent:@"gameboard.plist"];
-    return fileName;
-}
-
-- (void) appWillResignActive:(NSNotification *)notification{
-    NSLog(@"appWillResignActive:");
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(appWillResignActive:) name:UIApplicationWillResignActiveNotification object:nil];
 }
 
 - (void)didReceiveMemoryWarning {

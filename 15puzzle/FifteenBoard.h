@@ -12,6 +12,9 @@
 
 @property (strong, nonatomic) NSMutableArray *numbers;
 
+-(NSString*)sandBoxFileName;
+-(void)saveBoard;
+-(void)loadBoard;
 -(instancetype)init;
 -(void)scramble:(int)n;
 -(int)getTileAtRow:(int)row Column:(int)col;
